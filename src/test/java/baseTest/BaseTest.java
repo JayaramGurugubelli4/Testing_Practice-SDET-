@@ -3,12 +3,14 @@ package baseTest;
 import factoryRunner.DriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 public class BaseTest {
     protected WebDriver driver;
     DriverFactory driverFactory;
-    @BeforeClass
+    @BeforeMethod
     public void beforeClass(){
         driverFactory =new DriverFactory();
         driverFactory.setUp();
@@ -16,7 +18,7 @@ public class BaseTest {
         driver.get("https://sauce-demo.myshopify.com/");
         driver.manage().window().maximize();
     }
-    @AfterClass
+    @AfterMethod
     public void afterClass(){
         if(driver!=null) {
             driver.close();

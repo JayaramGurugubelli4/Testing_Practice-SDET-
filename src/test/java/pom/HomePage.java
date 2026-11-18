@@ -8,14 +8,14 @@ public class HomePage extends BasePage {
     public HomePage(WebDriver driver) {
         super(driver);
     }
-    private By loginPage=By.linkText("Log In");
-    private By registerPage=By.linkText("Sign up");
+    private final By loginPage=By.linkText("Log In");
+    private final By registerPage=By.linkText("Sign up");
     public LoginPage loginpage(){
         click(loginPage);
         return new LoginPage(driver);
     }
     public RegisterPage registerpage(){
         click(registerPage);
-        return new RegisterPage();
+        return new RegisterPage(driver);
     }
 }

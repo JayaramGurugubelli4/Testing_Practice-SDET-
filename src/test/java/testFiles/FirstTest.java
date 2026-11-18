@@ -1,6 +1,5 @@
 package testFiles;
 
-import basePage.BasePage;
 import baseTest.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -11,11 +10,19 @@ import pom.RegisterPage;
 public class FirstTest extends BaseTest {
     private LoginPage loginpage;
     private HomePage homePage;
-    @Test
-    public void firstTest(){
+    private RegisterPage registerPage;
+    @Test(testName = "TC_0001")
+    public void loginTest(){
         homePage=new HomePage(driver);
-        homePage.loginpage();
-        loginpage=new LoginPage(driver);
+        loginpage=homePage.loginpage();
+
        Assert.assertTrue(loginpage.checkIsLoginPage());
+    }
+    @Test(testName = "TC_0002")
+    public void registrationTest(){
+        homePage=new HomePage(driver);
+        registerPage=homePage.registerpage();
+        Assert.assertTrue(registerPage.isRegisterationPage());
+        registerPage.register("Jayaram","Gurugubelli","jayaram@gmail.com","Jayaram@123");
     }
 }

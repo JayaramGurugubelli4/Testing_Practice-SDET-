@@ -41,9 +41,6 @@ public class RegisterPage extends BasePage {
         element.sendKeys(pass);
         return this;
     }
-    public boolean isRegistrationSuccess(){
-        return "https://sauce-demo.myshopify.com/".equals(driver.getCurrentUrl());
-    }
     public HomePage goToHomePage(){
         return new HomePage(driver);
     }

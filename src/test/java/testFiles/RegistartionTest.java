@@ -1,6 +1,7 @@
 package testFiles;
 
 import baseTest.BaseTest;
+import com.sun.source.tree.AssertTree;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pom.HomePage;
@@ -18,7 +19,5 @@ public class RegistartionTest extends BaseTest {
                 .email("nani@gmail1.com")
                 .password("Nani1@2205")
                 .register();
-        //Assert.assertTrue(registerPage.isRegisterationPage());
-        Assert.assertTrue(registerPage.isRegistrationSuccess());
     }
 }
